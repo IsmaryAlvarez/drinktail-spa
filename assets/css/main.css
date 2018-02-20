@@ -8,16 +8,29 @@ body {
 
 .logo {
   background-image: url(../img/logo.png);
-  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  height: 380px;
+}
+
+.logo-m {
+  width: 70px;
+}
+
+.navigation {
+  height: 70px;
 }
 
 #page-public {
-  height: 400px;
+  height: auto;
+  background-color: #fff;
 }
 
 
 #page-user {
   height: 400px;
+  background-color: #fff;
 }
 
 #page-user-fav {

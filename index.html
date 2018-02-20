@@ -2,28 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>Drinktail - App de Cocktails y Tragos</title>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-  <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">DrinkTail</a>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header navigation">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand visible-xs-inline logo-m" href="#"><img src="assets/img/logo-m.png" alt="" class="img-responsive "></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Inicio</a></li>
+          <li><a href="#">Page 2</a></li>
+          <li><a href="#">Page 3</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class=""></span> Sign Up</a></li>
+          <li><a href="#"><span class=""></span>Login</a></li>
+        </ul>
+      </div>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Inicio</a></li>
-      <li><a href="#">Favoritos</a></li>
-      <li><a href="#">Recetas</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class=""></span> Sign Up</a></li>
-      <li><a href="#"><span class=""></span> Login</a></li>
-    </ul>
-    <header class="logo"></header>
-  </div>
-</nav>
+  </nav>
+  <header class="logo hidden-xs"></header>
+
   <main>
     <section id="page-public" class="container">
     
