@@ -7,26 +7,41 @@
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-  <nav>
-
-  </nav>
-  <section id="page-public">
-
-  </section>
-  <section id="page-user">
-    <!-- Logueado -->
-    <form action="">
-      <input type="search" id="search">
-      <input type="submit" id="submit">
-    </form>
-    <div id="container">
-
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">DrinkTail</a>
     </div>
-  </section>
-  <section id="page-user-fav">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Inicio</a></li>
+      <li><a href="#">Favoritos</a></li>
+      <li><a href="#">Recetas</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class=""></span> Sign Up</a></li>
+      <li><a href="#"><span class=""></span> Login</a></li>
+    </ul>
+    <header class="logo"></header>
+  </div>
+</nav>
+  <main>
+    <section id="page-public" class="container">
+    
+    </section>
+    <section id="page-user">
+    <!-- Logueado -->
+      <form action="">
+        <input type="search" id="search">
+        <input type="submit" id="submit">
+      </form>
+      <div id="container">
 
-  </section>
-
+      </div>
+    </section>
+    <section id="page-user-fav">
+    </section>
+  </main>
+  
   <script src="assets/js/jquery-3.3.1.min.js"></script>
     <!-- Axios -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
