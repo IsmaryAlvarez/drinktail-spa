@@ -1,0 +1,19 @@
+body {
+  background-color: #303030;
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#page-public {
+  height: 400px;
+}
+
+
+#page-user {
+  height: 400px;
+}
+
+#page-user-fav {
+  height: 400px;
+}
