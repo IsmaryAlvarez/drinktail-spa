@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>Drinktail - App de Cocktails y Tragos</title>
+  <script defer="" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -34,23 +35,24 @@
   <header class="logo hidden-xs"></header>
 
   <main>
-    <section id="page-public" class="container">
+    <section id="page-public" class="container-fluid">
     
     </section>
-    <section id="page-user" class="container">
     <!-- Logueado -->
+    <section id="page-user" class="container-fluid">
+    <div class="row">
       <form action="">
         <input type="search" id="search">
         <input type="submit" id="submit">
       </form>
-      <div id="container">
-
-      </div>
-      <div id="container2">
+      <!-- Resultados Busqueda -->
+      <div id="results-search"></div>
+      <div id="random-drink"></div>
+      
 
       </div>
     </section>
-    <section id="page-user-fav">
+    <section id="page-user-fav" class="container-fluid">
     </section>
   </main>
   

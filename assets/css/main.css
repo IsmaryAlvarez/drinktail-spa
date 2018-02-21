@@ -2,8 +2,8 @@ body {
   background-color: #303030;
   background-image: url(../img/bg.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: center top;
 }
 
 .logo {
@@ -29,10 +29,24 @@ body {
 
 
 #page-user {
-  height: 400px;
+  min-height: 400px;
   background-color: #fff;
+  border-radius-
 }
 
 #page-user-fav {
   height: 400px;
+}
+
+.random-section {
+  padding: 2em 1em;
+  min-height: 300px;
+  background-image: url(../img/bg_random.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #ccc;
+}
+
+.title {
+  color: #d0b968;
 }
