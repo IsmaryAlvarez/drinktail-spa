@@ -2,8 +2,13 @@ body {
   background-color: #303030;
   background-image: url(../img/bg.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  /*background-size: contain; para page user */
   background-position: center top;
+}
+
+nav {
+  display: none;
 }
 
 .logo {
@@ -22,19 +27,17 @@ body {
   height: 70px;
 }
 
-#page-public {
-  height: auto;
-  background-color: #fff;
-}
+
 
 
 #page-user {
+  display: none;
   min-height: 400px;
   background-color: #fff;
-  border-radius-
 }
 
 #page-user-fav {
+  display: none;
   height: 400px;
 }
 
@@ -50,3 +53,18 @@ body {
 .title {
   color: #d0b968;
 }
+
+/* Pagina Publica */
+
+#page-public {
+  height: auto;
+}
+
+.icon {
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
