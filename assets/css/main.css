@@ -27,9 +27,6 @@ nav {
   height: 70px;
 }
 
-
-
-
 #page-user {
   display: none;
   min-height: 400px;
@@ -60,11 +57,18 @@ nav {
   height: auto;
 }
 
-.icon {
-  margin: auto;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+.fa-glass-martini {
+  font-size: 8em;
+  padding: 30px;
   border: 1px solid #fff;
+  color: #fff;
+}
+
+.fa-glass-martini {
+  font-size: 9em;
+  padding: 30px;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 50%;
 }
 
