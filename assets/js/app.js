@@ -1,9 +1,9 @@
 $(document).ready(function () {
-  random();
+  //random();
 })
 
 
-let submit = $('#submit');
+/*let submit = $('#submit');
 let search;
 
 
@@ -11,7 +11,7 @@ submit.click(function(e) {
   e.preventDefault();
   search = $('#search').val();
   getDrinks();
-});
+});*/
 
 function getDrinks(searchText) {
   axios.get('http://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + search)

@@ -84,11 +84,11 @@ function showContentUsers () {
                   <section id="page-user" class="container-fluid">
                     <div class="row">
                       <div class="col-xs-12 search-content">
-                        <form action="">
+                        <form>
                           <input type="search" id="search">
                           <input type="radio" name="gender" value="c">Nombre
                           <input type="radio" name="gender" value="i">Ingrediente
-                          <input type="submit" id="submit" name="Buscar">
+                          <input type="submit" id="submit">
                         </form>
                       </div>
                       <!-- Resultados Busqueda -->
@@ -97,5 +97,18 @@ function showContentUsers () {
                       <div id="favoritos"></div>
                     </div>
                   </section>`;
+  $('.navbar-right').html(`
+    <li><a href="#" class="text-uppercase"><span><i class="fas fa-user"></i> </span>Mi Cuenta</a></li>
+    <li><a href="#" class="text-uppercase"><span><i class="fas fa-window-close"></i> </span>Cerrar Sesión</a></li>`);
   $('#show-pages').html(pageUser);
+  random();
+  let submit = $('#submit');
+  let search;
+
+
+  submit.click(function(e) {
+    e.preventDefault();
+    search = $('#search').val();
+    getDrinks();
+  });
 }
