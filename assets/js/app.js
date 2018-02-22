@@ -87,12 +87,11 @@ function getDrinkDetails (id) {
       <h5>Categoría: ${drink.strCategory}</h5>
       <h5>Tipo de Vaso: ${drink.strGlass}</h5>
       </div>
-      <div class="col-xs-6 col-xs-offset-2 col-md-1 text-right"><button class="text-uppercase btn btn-info" onclick="getDrinkDetails(${drink.idDrink})">Detalles</button></div>
-      <div class="col-md-12 text-center"><button class="text-uppercase btn btn-default" onclick="random()">¡Voy a tener suerte!</button></div>
       </div>
       `;
       });
       $('#page-user-fav').html(output);
+      
     })
     .catch((err) =>{
       console.log(err);
