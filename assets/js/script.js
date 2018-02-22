@@ -1,3 +1,6 @@
+var worker = null;
+var loaded = 0;
+
 $(document).ready(function () {
   var pagesID = 0;
   startLoading();
@@ -12,11 +15,24 @@ $(document).ready(function () {
     $('#page_1').delay(3500).fadeIn();
     pagesID++;
   }
+
+  // Inicio Firebase
+  const email = $('#email').val();
+  const password = $('#password').val();
+  const btnRegister = $('#submit_register');
+  const btnLogin = $('#submit_login');
+
+  btnRegister.click(function () {
+
+  })
+
+  btnLogin.click(function () {
+    const auth = firebase.auth();
+    const promise = auth.signInWithEmailAndPassword(email,password)
+  })
+
+
 })
-
-
-var worker = null;
-var loaded = 0;
 
 function increment() {
     $('#counter').html(loaded+'%');
@@ -31,7 +47,7 @@ function increment() {
         stopLoading();
         setTimeout(startLoading, 1000);
     }
-    else loaded++;    
+    else loaded++;
 }
 
 function startLoading() {
