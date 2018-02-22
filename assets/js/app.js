@@ -21,11 +21,12 @@ function getDrinks(searchText) {
       console.log(response.data.drinks);
       $.each(drinks, (index, drink) => {
         output += `
-      <div class="col-md-3">
+      <div class="col-xs-6 col-md-3">
       <div class="well text-center">
       <h5>${drink.strDrink}</h5>
       <h5>${drink.strGlass}</h5>
       <img src="http://${drink.strDrinkThumb}" class="img-thumbnail">
+      <div><span><i class="fas fa-heart"></i></span><span><i class="fas fa-info-circle"></i></span></div>
       </div>
       </div>
       `;

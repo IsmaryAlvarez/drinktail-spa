@@ -1,14 +1,16 @@
 $(document).ready(function () {
   var userConnect = null;
 
-
-  $('#submit_register').submit(function () {
+  $('#modalRegister2').click(function () {
+    $('#modalRegister').modal().show();
+  })
+  $('#submit_register').click(function () {
     var email = $('#email').val();
     var password = $('#password').val();
     if (password.length >= 6) {
       firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(function () {
-          //verify();
+          verify();
       })
       .catch(function(error) {
       // Handle Errors here.
@@ -23,7 +25,7 @@ $(document).ready(function () {
     }
   });
 
-  $('#submit_login').submit( function () {
+  $('#submit_login').click( function () {
     var emailLogin = $('#email_login').val();
     var passwordLogin = $('#pwd_login').val();
     firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin).catch(function(error) {
@@ -32,5 +34,68 @@ $(document).ready(function () {
       var errorMessage = error.message;
       // ...
     });
-  })  
+
+    $('#forgetpwd').click(function () {
+    var auth = firebase.auth();
+    var emailAddress = prompt('Ingresa tu correo');
+    auth.sendPasswordResetEmail(emailAddress).then(function() {
+    // Email sent.
+    }).catch(function(error) {
+    // An error happened.
+    });
+    })
+
+    firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      var displayName = user.displayName;
+      var email = user.email;
+      var emailVerified = user.emailVerified;
+      var photoURL = user.photoURL;
+      var isAnonymous = user.isAnonymous;
+      var uid = user.uid;
+      var providerData = user.providerData;
+      console.log(user);
+      
+     if (emailVerified) {
+        // Si el usuario esta verificado, puede acceder al contenido
+        showContentUsers();
+      }
+   }
+    }); 
+
+  });
+
 })
+
+function verify() {
+    var user = firebase.auth().currentUser;
+    user.sendEmailVerification().then(function() {
+      // Email sent.
+    }).catch(function(error) {
+      // An error happened.
+      console.log(error);
+    });
+}
+
+function showContentUsers () {
+  // Cambio contenido main users
+  var pageUser = `<header><img src="assets/img/logo.png" alt="" class="img-responsive img-center"></header>
+                  <section id="page-user" class="container-fluid">
+                    <div class="row">
+                      <div class="col-xs-12 search-content">
+                        <form action="">
+                          <input type="search" id="search">
+                          <input type="radio" name="gender" value="c">Nombre
+                          <input type="radio" name="gender" value="i">Ingrediente
+                          <input type="submit" id="submit" name="Buscar">
+                        </form>
+                      </div>
+                      <!-- Resultados Busqueda -->
+                      <div id="results-search"></div>
+                      <div id="random-drink"></div>
+                      <div id="favoritos"></div>
+                    </div>
+                  </section>`;
+  $('#show-pages').html(pageUser);
+}
