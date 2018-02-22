@@ -5,12 +5,16 @@ $(document).ready(function () {
 
 let submit = $('#submit');
 let search;
-
+let name;
 
 submit.click(function(e) {
   e.preventDefault();
   search = $('#search').val();
+  if( $('#name').checked === true){
   getDrinks();
+  }else{
+   getDrinksByIng();
+  }
 });
 
 function getDrinks(searchText) {
@@ -36,6 +40,34 @@ function getDrinks(searchText) {
     .catch((err) =>{
       console.log(err);
     });
+}
+
+function getDrinksByIng(Text){
+  axios.get('http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + search)
+    .then((response) => {
+      console.log(response);
+      let drinks = response.data.drinks;
+      let output = '';
+      if (drinks === undefined){
+      alert('No tenemos registrados cocktails con éste ingrediente');
+      }
+      $.each(drinks, (index, drink) => {
+        output += `
+      <div class="col-xs-6 col-md-3">
+      <div class="well text-center">
+      <h5>${drink.strDrink}</h5>
+      <img src="http://${drink.strDrinkThumb}" class="img-thumbnail">
+      <div><span><i class="fas fa-heart"></i></span><span><i class="fas fa-info-circle"></i></span></div>
+      </div>
+      </div>
+      `;
+      });
+      $('#results-search').html(output);
+    })
+    .catch((err) =>{
+      console.log(err);
+    });
+
 }
 
 function random(){
