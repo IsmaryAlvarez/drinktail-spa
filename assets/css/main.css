@@ -2,13 +2,8 @@ body {
   background-color: #303030;
   background-image: url(../img/bg.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
   /*background-size: contain; para page user */
   background-position: center top;
-}
-
-nav {
-  display: none;
 }
 
 .logo {
@@ -24,7 +19,7 @@ nav {
 }
 
 .navigation {
-  height: 70px;
+  height: 50px;
 }
 
 #page-user {
@@ -54,6 +49,7 @@ nav {
 /* Pagina Publica */
 
 #page-public {
+  margin-top: 50px;
   height: auto;
 }
 
@@ -71,4 +67,54 @@ nav {
   color: #fff;
   border-radius: 50%;
 }
+
+.features {
+  width: 90%;
+  background-color: #fff;
+  background-image: url(../img/bg_clear.jpg);
+  min-height: 260px;
+  font-size: 1.2em;
+  border-radius: 4px;
+  padding: .5em 1em;
+  margin: auto;
+}
+
+.features-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 1em auto;
+}
+
+.feat-1 {
+  background-image: url(../img/feature-1.jpg);
+  background-size: cover;
+  background-position: 60%;
+}
+
+.feat-2 {
+  background-image: url(../img/feature-2.jpg);
+  background-size: cover;
+  background-position: 60%;
+}
+
+.feat-3 {
+  background-image: url(../img/feature-3.jpg);
+  background-size: cover;
+  background-position: 50%;
+}
+
+.img-center {
+  max-width: 50%;
+  margin: auto;
+}
+
+
+@media (max-width: 768px) {
+  .navigation {
+  height: 70px;
+  }
+}
+
 
