@@ -23,9 +23,18 @@ body {
 }
 
 #page-user {
-  display: none;
+  margin-top: 50px;
   min-height: 400px;
+}
+
+.search-content {
+  padding: 2em;
   background-color: #fff;
+  background-image: url(../img/bg_clear.jpg);
+}
+
+.search-content form {
+  margin: auto;
 }
 
 #page-user-fav {
@@ -110,6 +119,23 @@ body {
   margin: auto;
 }
 
+.btn-register {
+  width: 100%;
+  padding: 1em;
+  margin: 1.5em 0;
+  font-size: 1.4em;
+  color: #fff;
+  background-color: #935483;
+}
+
+.btn-register:hover {
+  color: #fff;
+  background-color: #b16296;
+}
+
+.content-flex {
+
+}
 
 @media (max-width: 768px) {
   .navigation {
