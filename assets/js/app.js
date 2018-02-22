@@ -2,6 +2,7 @@ $(document).ready(function () {
   random();
 })
 
+
 let submit = $('#submit');
 let search;
 
@@ -15,7 +16,6 @@ submit.click(function(e) {
 function getDrinks(searchText) {
   axios.get('http://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + search)
     .then((response) => {
-
       let drinks = response.data.drinks;
       let output = '';
       console.log(response.data.drinks);
@@ -70,4 +70,32 @@ function random(){
 // Funcion para obtener los datos por ID
 function getDrinkDetails (id) {
   console.log(id);
+  axios.get(`http://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
+    .then((response) => {
+      let drinks = response.data.drinks;
+      let output = '';
+      console.log(response.data.drinks);
+      $.each(drinks, (index, drink) => {
+        output += `
+      <div class="col-md-12 random-section">
+      <div class="row">
+      <div class="col-xs-4 col-md-offset-1 col-md-3">
+      <img src="http://${drink.strDrinkThumb}" class="img-thumbnail">
+      </div>
+      <div class="col-md-6">
+      <h3 class="title">${drink.strDrink}</h3>
+      <h5>Categoría: ${drink.strCategory}</h5>
+      <h5>Tipo de Vaso: ${drink.strGlass}</h5>
+      </div>
+      <div class="col-xs-6 col-xs-offset-2 col-md-1 text-right"><button class="text-uppercase btn btn-info" onclick="getDrinkDetails(${drink.idDrink})">Detalles</button></div>
+      <div class="col-md-12 text-center"><button class="text-uppercase btn btn-default" onclick="random()">¡Voy a tener suerte!</button></div>
+      </div>
+      `;
+      });
+      $('#page-user-fav').html(output);
+    })
+    .catch((err) =>{
+      console.log(err);
+    });
 }
+
