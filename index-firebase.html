@@ -4,6 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>Drinktail - App de Cocktails y Tragos</title>
+  <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCsCC0gvTq5rboVrC3gzasZadOaQSqx2EU",
+      authDomain: "drinktail-spa.firebaseapp.com",
+      databaseURL: "https://drinktail-spa.firebaseio.com",
+      projectId: "drinktail-spa",
+      storageBucket: "drinktail-spa.appspot.com",
+      messagingSenderId: "30745806099"
+    };
+  firebase.initializeApp(config);
+</script>
   <script defer="" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
@@ -26,8 +42,8 @@
           <li><a href="#">Page 3</a></li>  -->
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class=""></span>Registrate</a></li>
-          <li><a href="#"><span class=""></span>Iniciar Sesión</a></li>
+          <li><a href="#" class="submit_register" data-toggle="modal" data-target="#modalRegister"><span ></span>Registrate</a></li>
+          <li><a href="#" id="submit_login" data-toggle="modal" data-target="#modalLogin"><span></span>Iniciar Sesión</a></li>
         </ul>
       </div>
     </div>
@@ -68,10 +84,83 @@
         </div>
       </div>
 
-      <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4"><button class="btn btn-register text-uppercase" id="register">Registrate</button></div>
+      <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4"><button class="btn btn-register text-uppercase submit_register">Registrate</button></div>
     </section>
   </main>
   
+
+  <!-- Modal Registrarse -->
+  <div class="modal fade" id="modalRegister" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content register-form">
+        <div class="modal-header">
+          <h4 class="text-uppercase bold text-center"> Crea una cuenta nueva</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="content">
+          <div class="modal-body">
+          <!-- Formulario Registro -->
+          <form>
+            <div class="form-group">
+              <input id="email" class="form-control" type="email" placeholder="Correo Electrónico: ejemplo@correo.com">
+            </div>
+            <div class="form-group">
+              <input id="password" class="form-control" type="password"  placeholder="Contraseña (Minimo 6 caracteres)">
+            </div>
+
+            <button id="submit_register" type="button" class="btn btn-primary btn-send text-uppercase">Enviar</button>
+        
+          </form>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Fin Modal Registrarse-->
+  <!-- Modal Iniciar Sesión -->
+  <div class="modal fade" id="modalLogin" role="dialog">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content login-color">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title align-center"><img src="assets/img/user-dark.png" class="img-responsive photo-login" alt=""></h4>
+              </div>
+              <div class="modal-body">
+                <div class="content"> 
+                  <form class="form-horizontal row">
+                    <div class="form-group">
+                      <label class="control-label col-xs-offset-1 col-xs-2 col-md-offset-1 col-md-1"><i class="fa fa-user fa-lg" aria-hidden="true"></i></label>
+                      <div class="col-xs-8 col-md-8">
+                        <input type="email" class="form-control input-box" id="email_login" placeholder="Correo Electrónico">
+                      </div>
+                    </div>
+                  <div class="form-group">
+                    <label class="control-label col-xs-offset-1 col-xs-2 col-md-offset-1 col-md-1"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></label>
+                    <div class="col-xs-8 col-md-8">          
+                      <input type="password" class="form-control input-box" id="pwd_login" placeholder="Ingresa tu contraseña">
+                    </div>
+                  </div>
+                  <div class="form-group"> 
+                    <div class="col-xs-offset-5 col-xs-5 col-md-offset-5 col-md-5">
+                      <button type="button" class="btn btn-default bold text-uppercase default-color" id="submit_login" data-dismiss="modal">Login</button>
+                    </div>
+                  </div>
+                  <div class="form-group"> 
+                    <div class="col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-10">
+                      <p>Olvidaste tu contraseña? <a href="#" id="forgetpwd" data-dismiss="modal">Click Aquí</a></p>
+                      </div>
+                    </div>
+                  </form>
+                </div>              
+              </div>
+            </div>
+          </div>
+  </div>
+  <!-- Fin Modal Iniciar Sesión -->
   <script src="assets/js/jquery-3.3.1.min.js"></script>
     <!-- Axios -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
