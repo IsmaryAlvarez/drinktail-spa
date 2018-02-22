@@ -62,6 +62,8 @@ $(document).ready(function () {
         showContentUsers();
       }
    }
+
+
     }); 
 
   });
@@ -84,17 +86,19 @@ function showContentUsers () {
                   <section id="page-user" class="container-fluid">
                     <div class="row">
                       <div class="col-xs-12 search-content">
-                        <form>
-                          <input type="search" id="search">
-                          <input type="radio" name="gender" value="c">Nombre
-                          <input type="radio" name="gender" value="i">Ingrediente
-                          <input type="submit" id="submit">
-                        </form>
-                      </div>
-                      <!-- Resultados Busqueda -->
-                      <div id="results-search"></div>
-                      <div id="random-drink"></div>
-                      <div id="favoritos"></div>
+                        <form action="">
+                      <input type="search" id="search">
+                      <input type="radio" name="gender" id="name">Nombre
+                      <input type="radio" name="gender" id="ing">Ingrediente
+                    <input type="submit" id="submit" name="Buscar">
+      </form>
+      </div>
+      
+      <!-- Resultados Busqueda -->
+      <div id="results-search"></div>
+      <div id="random-drink"></div>
+      
+      <div id="favoritos"></div>
                     </div>
                   </section>`;
   $('.navbar-right').html(`
