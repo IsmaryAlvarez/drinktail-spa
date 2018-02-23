@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Drinktail - App de Cocktails y Tragos</title>
+  <script defer="" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header navigation">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand visible-xs-inline logo-m" href="#"><img src="assets/img/logo-m.png" alt="" class="img-responsive "></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Inicio</a></li>
+          <li><a href="#">Page 2</a></li>
+          <li><a href="#">Page 3</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class=""></span>Sign Up</a></li>
+          <li><a href="#"><span class=""></span>Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  <main>
+    <!-- Logueado -->
+    <header><img src="assets/img/logo.png" alt="" class="img-responsive img-center"></header>
+    <section id="page-user" class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 search-content">
+        <form action="">
+        <input type="search" id="search">
+        <input type="radio" name="gender" id="name">Nombre
+        <input type="radio" name="gender" id="ing">Ingrediente
+        <input type="submit" id="submit" name="Buscar">
+      </form>
+      </div>
+      
+      <!-- Resultados Busqueda -->
+      <div id="results-search"></div>
+      <div id="random-drink"></div>
+      
+      <div id="favoritos"></div>
+
+      </div>
+    </section>
+    <section id="page-user-fav" class="container-fluid">
+    </section>
+  </main>
+  
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <!-- Axios -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -143,6 +143,17 @@ footer {
   color: white;
 }
 
+
+#page_2 {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 4vh;
+  background: -moz-linear-gradient(#a75c9c, #639ac5)
+  background: -webkit-linear-gradient(#a75c9c, #639ac5);
+  background: -o-linear-gradient(#a75c9c, #639ac5);
+  background: linear-gradient(#a75c9c, #639ac5);
+  color: white;
+}
 .drinks-home {
   width: 100%;
   height: 240px;
@@ -163,3 +174,27 @@ footer {
   border: 1px solid #8f72ab;
 }
 
+
+.random-section {
+  padding: 1em;
+  background-image: url(../img/bg_random.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #ccc;
+}
+
+.title {
+  padding: 0;
+  margin: 0;
+  color: #d0b968;
+}
+
+.diviser {
+  border-top: 2px solid #1c1815;
+  padding-top: .8em;
+  margin-top: .8em;
+}
+
+.padding-0 {
+  padding: 0;
+}
