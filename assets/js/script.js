@@ -16,6 +16,14 @@ $(document).ready(function () {
     pagesID++;
   }
 
+ // Movimiento Foto Home
+  var x = 0;
+  setInterval(function(){
+    x-=1;
+    $('.drinks-home').css('background-position', x  + '0' + 'px');
+    }, 100);
+  
+
   // Inicio Firebase
   const email = $('#email').val();
   const password = $('#password').val();
