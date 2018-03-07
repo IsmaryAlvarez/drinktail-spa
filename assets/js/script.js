@@ -37,6 +37,8 @@ $(document).ready(function () {
   btnLogin.click(function () {
     /*const auth = firebase.auth();
     const promise = auth.signInWithEmailAndPassword(email,password)*/
+    $('#page_1').fadeOut();
+    $('#page_2').delay(2000).fadeIn();
     random();
     getCategories();
     //filter('c', 'strCategory');
@@ -87,7 +89,7 @@ function random(){
       <div class="col-md-12 random-section">
       <div class="row">
       <div class="col-xs-5 col-md-offset-1 col-md-3">
-      <img src="http://${drink.strDrinkThumb}" class="img-thumbnail">
+      <img src="${drink.strDrinkThumb}" class="img-thumbnail">
       </div>
       <div class="col-xs-7 col-md-6">
       <h3 class="title">${drink.strDrink}</h3>

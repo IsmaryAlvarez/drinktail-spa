@@ -198,3 +198,11 @@ footer {
 .padding-0 {
   padding: 0;
 }
+
+#filter {
+  padding: 0;
+}
+
+#filter li {
+  list-style-type: none;
+}
