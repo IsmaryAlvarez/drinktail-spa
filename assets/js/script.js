@@ -5,10 +5,10 @@ $(document).ready(function () {
   var pagesID = 0;
   startLoading();
   // Paginas en Hide()
-  //$('.pages').hide();
-  //$('#page_0').show();
-  // Splash Page 0
-  //splash(3500);
+  $('.pages').hide();
+  $('#page_0').show();
+  //Splash Page 0
+  splash(3500);
   function splash(time) {
     setTimeout(function () {
     $('#page_0').fadeOut(); }, time);
